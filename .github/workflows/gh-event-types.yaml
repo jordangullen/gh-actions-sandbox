@@ -1,0 +1,9 @@
+name: GH Event Types
+on:
+  workflow_dispatch:
+
+jobs:
+  displayEventTypes:
+    runs-on: [ubuntu-latest]
+    steps:
+      - run: echo event_name ${{github.event_name}}
