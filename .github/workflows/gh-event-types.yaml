@@ -18,14 +18,14 @@ jobs:
     runs-on: [ubuntu-latest]
     steps:
       - id: foo
-        run: echo "bar=true" >> $GITHUB_OUTPUT
+        run: echo "exists=false" >> $GITHUB_OUTPUT
         
-      - if: ${{ steps.foo.outputs.bar == 'false' }}
+      - if: ${{ steps.foo.outputs.exists == 'false' }}
         run: echo "was false string"
-      - if: ${{ steps.foo.outputs.bar == false }}
+      - if: ${{ steps.foo.outputs.exists == false }}
         run: echo "was false bool"
-      - if: ${{ steps.foo.outputs.bar == 'true' }}
+      - if: ${{ steps.foo.outputs.exists == 'true' }}
         run: echo "was true string"
-      - if: ${{ steps.foo.outputs.bar == true }}
+      - if: ${{ steps.foo.outputs.exists == true }}
         run: echo "was true bool"
       
