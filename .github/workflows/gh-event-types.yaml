@@ -12,3 +12,4 @@ jobs:
     runs-on: [ubuntu-latest]
     steps:
       - run: echo event_name ${{github.event_name}}
+      - run: echo sha ${{github.sha}}
