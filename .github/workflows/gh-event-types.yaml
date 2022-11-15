@@ -6,7 +6,7 @@ on:
     branches: [main]
   workflow_dispatch:
 
-# Bump
+# Bump bump
 jobs:
   displayEventTypes:
     runs-on: [ubuntu-latest]
