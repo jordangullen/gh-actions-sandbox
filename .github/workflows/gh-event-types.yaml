@@ -13,3 +13,19 @@ jobs:
     steps:
       - run: echo event_name ${{github.event_name}}
       - run: echo sha ${{github.sha}}
+      
+  outputsTest:
+    runs-on: [ubuntu-latest]
+    steps:
+      - id: foo
+        run: echo "exists=true" >> $GITHUB_OUTPUT
+        
+      - if: ${{ steps.foo.exists == 'false' }}
+        run: echo "was false string"
+      - if: ${{ steps.foo.exists == false }}
+        run: echo "was false bool"
+      - if: ${{ steps.foo.exists == 'true' }}
+        run: echo "was true string"
+      - if: ${{ steps.foo.exists == true }}
+        run: echo "was true bool"
+      
