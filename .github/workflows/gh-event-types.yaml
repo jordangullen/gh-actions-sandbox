@@ -20,12 +20,12 @@ jobs:
       - id: foo
         run: echo "bar=true" >> $GITHUB_OUTPUT
         
-      - if: ${{ steps.foo.bar == 'false' }}
+      - if: ${{ steps.foo.outputs.bar == 'false' }}
         run: echo "was false string"
-      - if: ${{ steps.foo.bar == false }}
+      - if: ${{ steps.foo.outputs.bar == false }}
         run: echo "was false bool"
-      - if: ${{ steps.foo.bar == 'true' }}
+      - if: ${{ steps.foo.outputs.bar == 'true' }}
         run: echo "was true string"
-      - if: ${{ steps.foo.bar == true }}
+      - if: ${{ steps.foo.outputs.bar == true }}
         run: echo "was true bool"
       
