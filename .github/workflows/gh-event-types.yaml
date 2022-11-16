@@ -8,6 +8,11 @@ on:
 
 # Bump bump
 jobs:
+  envVars:
+    runs-on: [ubuntu-latest]
+    steps:
+      - run: printenv
+    
   displayEventTypes:
     runs-on: [ubuntu-latest]
     steps:
